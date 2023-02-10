@@ -2,12 +2,13 @@
 :root {
   /*Color*/
   --body-color: repeating-linear-gradient(35deg, yellow 0px, yellow 40px, black 40px, red 80px);
-  --header-color: #DAE5E0;
+  --header-color: #910808;
   --nav-color: #ABCCA8;
   --section-color: #58935D;
   --article-color: #9bf6ff;
   --aside-color: #97B0A2;
   --foter-color: #C5CCB3;
+  --text-color: #FFFF;
 }
 * {
   padding: 0;
@@ -16,6 +17,10 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
+/*No resaltar ligas visitadas  */
+a:focus{
+  outline:0px;
+  }
 body {
   text-align: center;
   display: grid;
@@ -27,6 +32,7 @@ body {
 }
 header {
   background-color: var(--header-color);
+  color: var(--text-color);
   grid-column: 1/-1;
   grid-row: 1/2;
   display: grid;
@@ -38,6 +44,51 @@ nav {
   display: grid;
   place-content: center;
 }
+.menu_principal{
+  background-color: #640923;
+}
+
+/*Estilo de la liga dentro del encabezado*/
+.encabezado_menu a{
+  color:#FFFFFF;
+}
+
+/*Estilo de la liga (opciones) del menú*/
+.elementos_menu li a{
+  color:#FFFFFF;
+}
+
+/*Estilo al pasar el cursor sobre la liga*/
+.elementos_menu li a:hover{
+  color:#640923;
+  background-color: #FFFFFF;
+}
+
+/*Estilo del caret (triángulo)*/
+.caret{
+color:#FFFFFF;
+}
+
+/*Estilo del caret al pasar el cursor sobre la liga que lo contiene*/
+.elementos_menu li a:hover .caret{
+color:#640923;
+}
+
+/*Estilos de los elementos del menú emergente*/
+.emergente{
+  background-color:  #640923;
+}
+
+/*Estilo de las ligas*/
+.emergente a{
+  color:#FFFFFF;
+}
+
+/*Estilo de las ligas al pasar el cursor*/
+.emergente a:hover{
+  color:#640923;
+}
+
 aside {
   background: var(--aside-color);
   grid-column: 3/4;
