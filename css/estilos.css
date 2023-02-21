@@ -1,8 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
 :root {
+  /*typography*/
+  --body-font: "Montserrat", swap;
+  --big-font-size: 4.25rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.8rem;
+  --small-font-size: 0.813rem;
+
+  /*===== Margenes =====*/
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+
+  /*===== z index =====*/
+  --z-fixed: 100;
+
   /*Color*/
-  --body-color: repeating-linear-gradient(35deg, yellow 0px, yellow 40px, black 40px, red 80px);
-  --header-color: #910808;
+  --body-color: hsl(322, 100%, 8%);
+  --header-color: hsl(348,88%,40%);
   --nav-color: #ABCCA8;
   --section-color: #58935D;
   --article-color: #9bf6ff;
@@ -17,76 +34,59 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
-/*No resaltar ligas visitadas  */
-a:focus{
-  outline:0px;
-  }
+
 body {
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(12, 1fr);
-  height: 98vh;
+  height: 99vh;
   gap: 4px;
-  background: var(--body-color);
+  background-color: var(--header-color);
 }
 header {
   background-color: var(--header-color);
   color: var(--text-color);
   grid-column: 1/-1;
   grid-row: 1/2;
-  display: grid;
-  place-content: center;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 4px;
+}
+.logo {
+  width: 320px;
+  height: 90px;
+  padding: 0.7rem;
+}
+.logo img{
+  width: 100%;
+  height: auto;
+}
+/*Estilos de los textos en el banner*/
+.cbi {
+  color: #000000;
+  font-size: var(--normal-font-size);
+  display: flex;
+  align-self: flex-end;
+  padding-right: 0.5rem;
+}
+.carrera {
+  text-shadow: 0 0 0.2em #e88;
+  font-family: "Lora", serif;
+  font-size: var(--big-font-size);
 }
 nav {
   background: var(--nav-color);
   grid-column: 1/-1;
-  display: grid;
-  place-content: center;
+  display:inline-block;
+  text-decoration: none;
+}
+nav img {
+  width: 26px;
+  height: 26px;
 }
 .menu_principal{
   background-color: #640923;
-}
-
-/*Estilo de la liga dentro del encabezado*/
-.encabezado_menu a{
-  color:#FFFFFF;
-}
-
-/*Estilo de la liga (opciones) del menú*/
-.elementos_menu li a{
-  color:#FFFFFF;
-}
-
-/*Estilo al pasar el cursor sobre la liga*/
-.elementos_menu li a:hover{
-  color:#640923;
-  background-color: #FFFFFF;
-}
-
-/*Estilo del caret (triángulo)*/
-.caret{
-color:#FFFFFF;
-}
-
-/*Estilo del caret al pasar el cursor sobre la liga que lo contiene*/
-.elementos_menu li a:hover .caret{
-color:#640923;
-}
-
-/*Estilos de los elementos del menú emergente*/
-.emergente{
-  background-color:  #640923;
-}
-
-/*Estilo de las ligas*/
-.emergente a{
-  color:#FFFFFF;
-}
-
-/*Estilo de las ligas al pasar el cursor*/
-.emergente a:hover{
-  color:#640923;
 }
 
 aside {
